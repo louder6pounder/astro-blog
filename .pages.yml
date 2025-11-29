@@ -28,14 +28,14 @@ content:
       - { name: layout, type: string, hidden: true, default: "../layouts/AboutLayout.astro" }
       - { name: title, label: Title, type: string }
       - { name: body, label: Body, type: rich-text, options: { input: public/assets, output: /assets } }
-        # 👇 New carousel field
-  - {
-      name: carousel,
-      label: "Carousel Slides",
-      type: array,
-      fields: [
-        { name: image, label: "Image", type: file },
-        { name: slideTitle, label: "Slide Title", type: string },
-        { name: slideDescription, label: "Slide Description", type: text }
-      ]
-    }
+      - {
+          name: carousel,
+          label: "Carousel Slides",
+          type: object,
+          list: true,
+          fields: [
+            { name: image, label: "Image", type: file },
+            { name: slideTitle, label: "Slide Title", type: string },
+            { name: slideDescription, label: "Slide Description", type: text }
+          ]
+        }
